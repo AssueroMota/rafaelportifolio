@@ -1,22 +1,122 @@
+@import "@fontsource/manrope/latin-400.css";
+@import "@fontsource/manrope/latin-500.css";
+@import "@fontsource/manrope/latin-600.css";
+@import "@fontsource/manrope/latin-700.css";
+@import "@fontsource/manrope/latin-800.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+
+:root {
+  font-family: "Manrope", Arial, sans-serif;
+  color: #f4f1e8;
+  background: #101312;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bg: #101312;
+  --surface: #171b1a;
+  --panel: #202624;
+  --surface-hover: #232b28;
+  --text: #f4f1e8;
+  --muted: #abb2ac;
+  --subtle: #79827b;
+  --line: #303936;
+  --grid-line: #ffffff08;
+  --scan: #7dd3fc10;
+  --accent: #c8f560;
+  --accent-2: #73d7ff;
+  --accent-3: #ffcc66;
+  --accent-soft: #c8f56022;
+  --danger: #ff7d72;
+  --ink: #0d110e;
+  --shadow: 0 26px 80px #00000045;
+  --mono: "IBM Plex Mono", monospace;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f7f7f2;
+  --surface: #ffffff;
+  --panel: #eef1ea;
+  --surface-hover: #edf4ec;
+  --text: #1d241f;
+  --muted: #5c665f;
+  --subtle: #737d76;
+  --line: #d7ddd5;
+  --grid-line: #1d241f0c;
+  --scan: #1681a812;
+  --accent: #477214;
+  --accent-2: #096f8f;
+  --accent-3: #9a6500;
+  --accent-soft: #47721418;
+  --danger: #ba3b30;
+  --ink: #f7f7f2;
+  --shadow: 0 24px 70px #1d241f16;
+  color-scheme: light;
+}
 * {
   box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  margin: 0;
-  min-height: 100%;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fff;
-}
-
-h1 {
-  margin: 0;
-  font-size: 48px;
-  font-weight: 400;
   letter-spacing: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25px;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+::selection {
+  background: #c3f36b;
+  color: #111412;
+}
+.accent {
+  color: var(--accent);
+}
+.muted {
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
